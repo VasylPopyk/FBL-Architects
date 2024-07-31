@@ -1,0 +1,18 @@
+.section2{
+    @include flex(column, center, center, nowrap);
+    padding: 64px 0 32px 0;
+    .section2_head{
+        padding: 0 64px 64px 64px;
+        @include flex(row, center, space-between, nowrap);
+        h1{@include font(40px, "Lato", 600, #323232, 110%); max-width: 620px;}
+        p{@include font(24px, "Lato", 400, #323232, 150%); max-width: 373px;}
+    }
+    .section2_foto{width: 100%;height: auto;}
+    @media(max-width: 990px){
+        .section2_head{
+            flex-wrap: wrap;
+            padding: 0;
+            h1, p{width: 100%;}
+        }
+    }
+}

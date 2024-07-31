@@ -1,0 +1,58 @@
+.tailored{
+    padding: 32px 0;
+    @include flex(row, center, space-between, nowrap);
+    .tailored_media{
+        img{border-radius: 5px;}
+    }
+    .tailored_content{
+        margin-left: 64px;
+        h1{@include font(48px, "Lato", 600, #323232, 120%);}
+        p{@include font(20px, "Lato", 400, #4D4D4D, 150%);}
+        width: 100%;
+        .tailored_items{
+            width: 384px;
+            height: 194px;
+            padding: 32px;
+            @include flex(row, flex-start, flex-start, nowrap);
+            img{width: 36px;height: 36px;margin-top: 18px;}
+            div{
+                margin-left: 24px;
+                @include flex(column, flex-start, flex-start, nowrap);
+                h3{@include font(24px, "Lato", 600, #323232, 140%);}
+                p{@include font(16px, "Lato", 400, #4D4D4D, 150%);}
+            }
+            &.left{margin-left: 256px;}
+        }
+    }
+    @media(max-width: 1300px){
+        flex-wrap: wrap-reverse;
+        .tailored_media{img{width: 100%;height: auto;}}
+        .tailored_content{margin-left: none;
+            align-items: center;
+            justify-content: center;
+            .tailored_items{
+                &.left{margin-left: 0;}
+            }
+        }
+    }
+    @media(max-width: 1300px){
+        .tailored_media{width: 100%;img{margin: 0px auto;}}
+        .tailored_content{margin-left: 0;width: 100%;@include flex(column, center, center, nowrap);
+            .tailored_items{
+                padding: 0;
+            }
+            padding-bottom: 10px;
+        }
+    }
+    @media(max-width: 767px){
+        .tailored_content{
+            margin-left: 0;
+            margin-bottom: 20px;
+            .tailored_items{
+                width: 100%;
+                padding: 0;
+                div{margin-left: 24px;}
+            }
+        }
+    }
+}

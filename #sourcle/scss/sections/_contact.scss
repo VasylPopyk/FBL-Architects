@@ -1,0 +1,39 @@
+.contact{
+    @include flex(row, center, space-between, nowrap);
+    .contact_content{
+        @include flex(column, flex-start, flex-start, nowrap);
+        width: 100%;
+        padding-right: 64px;
+        .contact_content_head{
+            h1{@include font(48px, "Lato", 600, #323232, 120%);}
+            p{@include font(20px, "Lato", 400, #323232, 150%);}
+        }
+        .contact_form{
+            @include flex(column, flex-start, flex-start, nowrap);
+            width: 100%;
+            .contact_form_item{
+                @include flex(column, flex-start, flex-start, nowrap);
+                width: 100%;
+                p{@include font(16px, "Lato", 400, #808080, 150%);}
+                input, textarea{
+                    width: 100%;
+                    height: 48px;
+                    @include font(16px, "Lato", 400, #323232, 150%);
+                    outline: none;
+                    background-color: rgba(128, 128, 128, 0.1);
+                    border: none;
+                    padding: 0 10px;
+                }
+                textarea{width: 100%;height: 180px;resize: none; padding: 10px;}
+            }
+            button{padding: 0;margin: 0;background-color: transparent;border: none;}
+        }
+    }
+    iframe{
+        width: 616px;
+        height: 616px;
+    }
+    @media(max-width: 990px){
+        iframe{display: none;.contact_content{padding-right: none;}}
+    }
+}

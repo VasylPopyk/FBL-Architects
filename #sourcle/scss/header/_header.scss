@@ -1,0 +1,96 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    z-index: 100;
+    .header_container{
+        @include flex(row, center, space-between, nowrap);
+        .header_logo{
+            img{width: 130px;height: 48px;}
+            z-index: 100;
+            @media(max-width: 990px){
+                img{width: 130px;height: 48px;}
+            }
+        }
+        .header_menu{
+            @include flex(row, center, space-between, nowrap);
+            width: 100%;
+            .header_menu_items{
+                @include flex(row, center, center, nowrap);
+                .header_menu_item{a{@include font(20px, "Lato", 400, #323232, 150%);text-decoration: none;};margin: 0 21px;}
+            }
+            .header_menu_button{
+                width: 140px;
+                height: 48px;
+                border-radius: 5px;
+                background-color: #97B543;
+                cursor: pointer;
+                @include flex(row, center, center, nowrap);
+                @include font(16px, "Lato", 400, white, 24px)
+            }
+        }
+        .header_burger{
+            width: 24px;
+            height: 24px;
+            @include flex(column, center, space-between, nowrap);
+            cursor: pointer;
+            display: none;
+            z-index: 100;
+            margin-right: 20px;
+            transition: all 0.7s ease 0s;
+            span{
+                position: relative;
+                top: 0;
+                left: 0;    
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: #97B543;
+                transition: all 0.7s ease 0s;
+            }
+            &.active{
+                span{transition: all 0.7s ease 0s;}
+                span:nth-child(1){
+                    transform: rotate(45deg) translate(5px, 10px);
+                }
+                span:nth-child(2){
+                    transform: scale(0);
+                }
+                span:nth-child(3){
+                    transform: rotate(-45deg) translate(5px, -10px);
+                }
+            }
+        }
+        @media(max-width: 990px){
+            .header_burger{display: flex;}
+            .header_menu{
+                position: fixed;
+                top: 0;
+                left: -120%;
+                width :100%;
+                height: 100%;
+                background-color: white;
+                flex-direction: column;
+                justify-content: center;
+                z-index: 99;
+                transition: all 0.7s ease 0s;
+                &.active{
+                    transition: all 0.7s ease 0s;
+                    left: 0;
+                }
+                .header_menu_items{
+                    flex-direction: column;
+                    .header_menu_item{
+                        margin: 10px;
+                    }
+                }
+                .header_menu_button{
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}

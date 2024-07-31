@@ -1,0 +1,96 @@
+.banner{
+    height: 100%;
+    margin-top: 50px;
+    padding: 50px 0;
+    @include flex(row, center, space-between, nowrap);
+    .banner_text{
+        h1{@include font(56px, "Lato", 600, #323232, 110%);}
+        p{@include font(20px, "Lato", 400, #323232, 150%)}
+        .contact{
+            @include flex(row, center, flex-start, nowrap);
+            .button{margin-left: 0;margin-right: 20px;}
+            p{@include font(14px, "Lato", 400, #323232, 150%);
+                span{font-weight: 700;}
+            }
+        }
+    }
+    .banner_media{
+        z-index: 10;
+        .banner_image{
+            position: relative;
+            top: 10px;
+            left: 0;
+            overflow: hidden;
+            img{
+                position: relative;
+                width: 633px;
+                height: 566px;
+                z-index: 1;
+            }
+            .polotno{
+                content: "";
+                position: absolute;
+                top: 25%;left: 50%;
+                height: 75%;
+                width: 50%;
+                border: 50px solid white;
+                background-color: transparent;
+                z-index: 1;
+            }
+            .polotno2{
+                content: "";
+                position: absolute;
+                top: 50%;left: 50%;
+                height: 50%;
+                width: 50%;
+                border: 50px solid white;
+                background-color: transparent;
+                z-index: 1;
+            }
+            .polotno3{
+                content: "";
+                position: absolute;
+                top: 40%;left: 0;
+                height: 0;
+                width: 50%;
+                border: 25px solid white;
+                background-color: transparent;
+                z-index: 1;
+            }
+            .geo{
+                width: 180px;
+                height: 82px;
+                background-color: white;
+                border-radius: 5px;
+                z-index: 2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include flex(row, center, center, nowrap);
+                box-shadow: 0px 0px 10px #3232322c;
+                img{width: 34px;height: 34px;}
+                h3{margin: 0 16px;@include font(22px, "Lato", 500, #323232, auto);}
+                &.first{
+                    top: 25%;
+                    left: -5%;
+                }
+                &.second{
+                    top: 65%;
+                    left: 75%;
+                }
+            }
+        }
+    }
+    @media(max-width: 990px){
+        flex-wrap: wrap;
+        .banner_text{
+            max-width: 530px;
+            height: auto;
+        }
+        .banner_media{margin: 0px auto;left: 20px;}
+    }
+    @media(max-width: 580px){
+        .banner_media{display: none;}
+        .banner_text{width: 100%;h1{font-size: 40px;}}
+    }
+}

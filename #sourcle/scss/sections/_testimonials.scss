@@ -1,0 +1,34 @@
+.testimonials{
+    .testimonials_head{
+        width: 100%;
+        h1{@include font(48px, "Lato", 600, #323232, 120%);text-align: center;}
+    }
+    .testimonials_content{
+        @include flex(row, center, space-between, nowrap);
+        .testimonials_content_item{
+            flex: 1 1 auto;
+            padding: 32px;
+            &:nth-child(2){margin: 0 32px;}
+            @include flex(column, flex-start, flex-start, nowrap);
+            p{@include font(16px, "Lato", 400, #323232, 150%);}
+            div{
+                @include flex(row, flex-start, flex-start, nowrap);
+                img{width: auto;height: 56px; margin-right: -30px;}
+                div{
+                    @include flex(column, flex-start, center, nowrap);
+                    h3{@include font(16px, "Lato", 600, #323232, auto);}
+                    p{@include font(14px, "Lato", 400, #323232, auto);}
+                }
+            }
+        }
+        @media(max-width: 990px){
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 0px auto;
+            width: 100%;
+            .testimonials_content_item:nth-child(2){margin: 0;}
+            .testimonials_content_item{margin: 0px auto;}
+        }
+    }
+}

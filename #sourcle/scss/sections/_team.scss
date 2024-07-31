@@ -1,0 +1,36 @@
+.team{
+    .team_head{
+        width: 100%;
+        h1{@include font(48px, "Lato", 600, #323232, 120%); text-align: center;}
+    }
+    .team_content{
+        @include flex(row, center, center, nowrap);
+        .team_content_image{
+            margin: 16px;
+            position: relative;
+            top: 0;
+            right: 0;
+            img{z-index: 1;}
+            div{
+                @include flex(row, center, center, nowrap);
+                position: absolute;
+                top: 75%;
+                right: 0;
+                z-index: 2;
+                background-color: white;
+                border-radius: 5px;
+                padding: 0 36px;
+                p{@include font(22px, "Lato", 600, #323232, auto);}
+                img{margin-left: 16px;}
+            }
+        }
+        @media(max-width: 1200px){
+            flex-direction: column;
+        }
+        @media(max-width: 520px){
+            .team_content_image{
+                img:not(:last-child){width: 100%;height: auto;}
+            }
+        }
+    }
+}

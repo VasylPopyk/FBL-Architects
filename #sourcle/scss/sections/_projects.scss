@@ -1,0 +1,29 @@
+.projects{
+    .projects_head{
+        width: 100%;
+        h1{@include font(48px, "Lato", 600, #323232, 120%);text-align: center;}
+    }
+    .projects_content{
+        width: 100%;
+        @include flex(row, center, space-between, nowrap);
+        img{}
+        @media(max-width :1400px){
+            img{width: auto;height: 350px;}
+        }
+        @media(max-width :1280px){
+            img{width: auto;height: 300px;}
+        }
+        @media(max-width :990px){
+            img{width: auto;height: 250px;}
+        }
+        @media(max-width :840px){
+            img{width: auto;height: 200px;}
+        }
+        @media(max-width :767px){
+            img{width: auto;height: 150px;}
+        }
+        @media(max-width :520px){
+            img{width: auto;height: 100px;}
+        }
+    }
+}
